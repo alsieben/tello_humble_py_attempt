@@ -43,12 +43,12 @@ colcon build --packages-select tello_aruco_follower
 
 
 ## Calibrating the Camera
-In a third docker terminal, run the calibration server with:
+In a third docker terminal, run the calibration service server with:
 ```
 ros2 run tello_aruco_follower tello_calibrator
 ```
 
-Point the tello drone's camera at the calibration plate. In a fourth docker terminal, run the calibration service server with:
+Point the tello drone's camera at the calibration plate. In a fourth docker terminal, call the calibration service with:
 ```
 ros2 service call /tello_calib_srv std_srvs/srv/Trigger
 ```
