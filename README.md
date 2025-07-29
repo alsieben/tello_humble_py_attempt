@@ -4,13 +4,31 @@ Attempting to have a DJI Tello drone follow an aruco marker. Does actually work 
 Runs on ros humble (in a docker container)
 
 # Setup
-Clone the repo, navigate to the main folder, and run ```docker compose up``` to start the docker container.
-From there, docker exec into the container ```docker exec -it <container_name> /bin/bash"``` with five terminals. Run ```colcon build``` in one, ```source install/setup.bash``` in all.
+Clone the repo, navigate to the main folder, and run 
+```
+docker compose up
+```
+ to start the docker container.
+From there, docker exec into the container 
+```
+docker exec -it <container_name> /bin/bash"
+```
+with five terminals. Run 
+```
+colcon build
+``` 
+in one, 
+```
+source install/setup.bash
+```
+ in all.
 
 # Calibration
 ## Tello Setup
 Turn on the tello and connect to its wifi on the host computer. Then in one of the docker terminals, run the following to start the core tello node.
-```ros2 run tello_humble_py tello_core```
+```
+ros2 run tello_humble_py tello_core
+```
 
 In another docker terminal, run ```ros2 run rviz2 rviz2``` to open rviz, (you may need to run ```xhost +``` in a new terminal outside of the docker container if this doesn't work). When rviz opens, click 'add' in the bottom right corner, go to the 'by topic' tab in the popup window, and click the 'image_raw' to bring up a video feed from the tello's front camera.
 
