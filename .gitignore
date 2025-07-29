@@ -1,0 +1,14 @@
+# vscode hidden folder
+**/.vscode/
+
+# original telloros2 files I copied from
+tello_ros2_foxy/
+
+
+#extra ros2 stuff that builds automatically
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+ros2_ws/src/testfile1.txt
+ros2_ws/src/testfile2.txt

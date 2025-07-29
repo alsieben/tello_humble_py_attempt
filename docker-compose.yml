@@ -1,0 +1,13 @@
+services:
+   tello_docker:
+      image: tello_docker
+      stdin_open: true
+      tty: true
+      network_mode: host
+      ipc: host
+      working_dir: /ros2_ws
+      volumes:
+         - ~/tellodocker/ros2_ws/src:/ros2_ws/src
+         - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      environment:
+         - "DISPLAY=${DISPLAY}" 
