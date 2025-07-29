@@ -36,7 +36,7 @@ ros2 run rviz2 rviz2
 You may need to run ```xhost +``` in a new terminal outside of the docker container if this doesn't work. When rviz opens, click 'add' in the bottom right corner, go to the 'by topic' tab in the popup window, and click the 'image_raw' to bring up a video feed from the tello's front camera.
 
 ## Calibration Setup
-Print or bring up a chessboard calibration plate/image and modify the expected parameters of the calibration plate in the calibrator script (change the values in lines 34-36 of 'tello_calib_img_cap_srv.py or run them as arguments when you run the script from 'ros2 run'. If you change the defaults in the code, make sure to rebuild the package with colcon to update the built code with the new changes).
+Print or bring up a chessboard calibration plate/image and modify the expected parameters of the calibration plate in the calibrator script (change the values in lines 34-36 of 'tello_calib_img_cap_srv.py' or run them as arguments when you run the script from 'ros2 run'. If you change the defaults in the code, make sure to rebuild the package with colcon to update the built code with the new changes).
 ```
 colcon build --packages-select tello_aruco_follower
 ```
