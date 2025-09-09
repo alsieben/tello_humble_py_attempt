@@ -3,7 +3,7 @@ Attempting to have a DJI Tello drone follow an aruco marker. Does actually work 
 
 Runs on ros humble (in a docker container)
 
-#To Do
+# To Do
 - fix the dockerfile (it has some parts missing currently, fixed on my laptop but haven't uploaded yet)
 - update readme with building the docker image before running docker compose up
 
