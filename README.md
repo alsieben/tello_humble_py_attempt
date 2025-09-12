@@ -3,7 +3,7 @@ Attempting to have a DJI Tello drone follow an aruco marker.
 
 Runs on ros humble (in a docker container)
 
-Requires: Docker, computer, checkerboard calibration pattern + aruco marker (or images of them on a moveable screen) of known size, DJI Tello drone
+Requires: Docker, checkerboard calibration pattern + aruco marker (or images of them on a moveable screen) of known size, DJI Tello drone
 
 # Setup
 Clone the repo and navigate to the main folder. To start the docker container, run:
