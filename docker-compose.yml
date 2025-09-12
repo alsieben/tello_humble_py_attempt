@@ -7,7 +7,7 @@ services:
       ipc: host
       working_dir: /ros2_ws
       volumes:
-         - ~/tellodocker/ros2_ws/src:/ros2_ws/src
+         - ./ros2_ws/src:/ros2_ws/src
          - /tmp/.X11-unix:/tmp/.X11-unix:rw
       environment:
          - "DISPLAY=${DISPLAY}" 
