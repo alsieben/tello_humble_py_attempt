@@ -1,17 +1,19 @@
 # tello_humble_py_attempt
-Attempting to have a DJI Tello drone follow an aruco marker. Does actually work (surprisingly enough)
+Attempting to have a DJI Tello drone follow an aruco marker.
 
 Runs on ros humble (in a docker container)
 
-# To Do
-- fix the dockerfile (it has some parts missing currently, fixed on my laptop but haven't uploaded yet)
-- update readme with building the docker image before running docker compose up
-
 # Setup
 Clone the repo and navigate to the main folder. To start the docker container, run:
+
+```
+docker build -t tello_docker .
+```
+to build the image, then
 ```
 docker compose up
 ```
+to start up the docker container.
 
 From there, docker exec into the container with five terminals:
 ```
@@ -84,8 +86,7 @@ ros2 topic pub --once /land std_msgs/msg/Empty
 When you are ready to fly, grab your Aruco marker, press enter in the 'takeoff' terminal to run the command you typed in and make the drone take off. Hold the ArUco marker in front of the drone and it should begin following it. Don't move it too fast or the drone may lose tracking and stop. If this happens, just show the drone the marker again and it should resume following. When you are ready to land, press enter in the 'land' terminal to tell the drone to land.
 
 ## Tips on flying
-- The drone video quality is not great, and its built-in wifi is not great for streaming HD video. It will probably stutter and freeze. Move slowly and have someone on standby to land the drone quickly if it loses tracking and does something strange.
-- Again, the wifi connection is not great for HD video. If possible, use an external wifi adapter and try to maintain a clear path between the drone and the wifi adapter at all times. It still won't be great, but it will be much better
+- The drone video quality is highly dependent on your computer's wifi card.
 - A laptop is great for displaying the ArUco marker since the screen is very flat. Make sure the size is displayed properly on the laptop (check with a ruler). Lights in the room may cause glare on the screen which can interfere with tracking. However, turning the lights in the room off disrupts the drone's ability to hover in one place (I would guess that the optical flow sensor it uses to maintain staitionary hover does not work well in the dark), so don't do that.
 - Don't bend the ArUco marker if it's on paper. This can severely impact the visual pose estimation algorithm, which assumes a perfectly flat marker.
 - Look through the parameters in the 'tello_aruco_follower.py' file and change whatever you want. You can change the following (lines ~40-130):
